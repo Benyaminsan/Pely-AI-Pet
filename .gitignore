@@ -44,3 +44,8 @@ Thumbs.db
 
 # Logs
 logs/*.log
+
+# ESP-IDF local configuration (may contain Wi-Fi credentials)
+sdkconfig
+sdkconfig.old
+managed_components/

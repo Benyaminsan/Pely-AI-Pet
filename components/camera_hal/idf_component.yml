@@ -1,0 +1,8 @@
+description: "OV5640 RGB565 camera HAL with PSRAM frame leases for ESP32-S3"
+targets:
+  - esp32s3
+dependencies:
+  idf: ">=5.3,<6.0"
+  espressif/esp32-camera:
+    version: "2.1.8"
+    public: true

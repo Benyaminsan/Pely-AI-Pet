@@ -39,6 +39,46 @@
       "aliases": ["fresh milk", "milk bottle", "glass of milk", "milk"],
       "image_folder": "data/foods/milk",
       "description": "Refreshing glass of calcium-rich milk"
+    },
+    {
+      "id": "pizza",
+      "name": "Pizza",
+      "emoji": "🍕",
+      "aliases": ["pizza slice", "pepperoni pizza", "cheese pizza", "pizza"],
+      "image_folder": "data/foods/pizza",
+      "description": "Cheesy melty pizza slice with pepperoni"
+    },
+    {
+      "id": "orange_juice",
+      "name": "Orange Juice",
+      "emoji": "🍊",
+      "aliases": ["juice", "OJ", "orange drink", "fresh juice", "orange juice"],
+      "image_folder": "data/foods/orange_juice",
+      "description": "Refreshing freshly squeezed orange juice"
+    },
+    {
+      "id": "banana",
+      "name": "Banana",
+      "emoji": "🍌",
+      "aliases": ["ripe banana", "yellow banana", "banana"],
+      "image_folder": "data/foods/banana",
+      "description": "Sweet ripe yellow banana full of energy"
+    },
+    {
+      "id": "sushi",
+      "name": "Sushi",
+      "emoji": "🍣",
+      "aliases": ["nigiri", "salmon sushi", "japanese food", "sushi"],
+      "image_folder": "data/foods/sushi",
+      "description": "Fresh delicate Japanese sushi with salmon"
+    },
+    {
+      "id": "chocolate_cake",
+      "name": "Chocolate Cake",
+      "emoji": "🍰",
+      "aliases": ["cake", "choco cake", "chocolate dessert", "chocolate cake"],
+      "image_folder": "data/foods/chocolate_cake",
+      "description": "Rich decadent chocolate layer cake with ganache"
     }
   ]
 }

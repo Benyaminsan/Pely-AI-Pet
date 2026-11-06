@@ -1,0 +1,210 @@
+menu "Pely application"
+
+menu "OV5640 wiring (fill from the board schematic)"
+config PELY_CAM_PWDN
+    int "PWDN GPIO (-1 if unused)"
+    range -1 48
+    default -1
+config PELY_CAM_RESET
+    int "RESET GPIO (-1 if unused)"
+    range -1 48
+    default -1
+config PELY_CAM_XCLK
+    int "XCLK GPIO"
+    range -1 48
+    default -1
+config PELY_CAM_SDA
+    int "SCCB SDA GPIO"
+    range -1 48
+    default -1
+config PELY_CAM_SCL
+    int "SCCB SCL GPIO"
+    range -1 48
+    default -1
+config PELY_CAM_D0
+    int "D0 GPIO"
+    range -1 48
+    default -1
+config PELY_CAM_D1
+    int "D1 GPIO"
+    range -1 48
+    default -1
+config PELY_CAM_D2
+    int "D2 GPIO"
+    range -1 48
+    default -1
+config PELY_CAM_D3
+    int "D3 GPIO"
+    range -1 48
+    default -1
+config PELY_CAM_D4
+    int "D4 GPIO"
+    range -1 48
+    default -1
+config PELY_CAM_D5
+    int "D5 GPIO"
+    range -1 48
+    default -1
+config PELY_CAM_D6
+    int "D6 GPIO"
+    range -1 48
+    default -1
+config PELY_CAM_D7
+    int "D7 GPIO"
+    range -1 48
+    default -1
+config PELY_CAM_VSYNC
+    int "VSYNC GPIO"
+    range -1 48
+    default -1
+config PELY_CAM_HREF
+    int "HREF GPIO"
+    range -1 48
+    default -1
+config PELY_CAM_PCLK
+    int "PCLK GPIO"
+    range -1 48
+    default -1
+config PELY_CAM_MIRROR
+    bool "Mirror captured image horizontally"
+    default n
+config PELY_CAM_FLIP
+    bool "Flip captured image vertically"
+    default n
+endmenu
+
+menu "FOMO model metadata"
+config PELY_FOMO_LABEL_IDS
+    string "Food IDs in model channel order, excluding background (CSV)"
+    default ""
+    help
+        Enter the actual exported class order, e.g. apple,milk,rice_egg.
+        IDs must exist in data/food_catalog.json. Leave empty to disable
+        inference until metadata is available; no class order is guessed.
+config PELY_FOMO_BACKGROUND_CHANNEL
+    int "Background output channel"
+    range 0 32
+    default 0
+config PELY_FOMO_INPUT_WIDTH
+    int "Model input width"
+    range 1 512
+    default 96
+config PELY_FOMO_INPUT_HEIGHT
+    int "Model input height"
+    range 1 512
+    default 96
+config PELY_CONFIDENCE_PERCENT
+    int "Detection confidence threshold (%)"
+    range 1 100
+    default 70
+config PELY_CONFIRM_FRAMES
+    int "Consecutive frames to confirm a card"
+    range 1 30
+    default 3
+config PELY_VISION_MAX_AGE_MS
+    int "Maximum age of a vision event (ms)"
+    range 100 10000
+    default 1000
+config PELY_FOMO_STRETCH
+    bool "Stretch input instead of center crop"
+    default n
+config PELY_FOMO_LOGITS
+    bool "Model output contains logits (apply softmax)"
+    default n
+config PELY_FOMO_BGR
+    bool "Model expects BGR instead of RGB"
+    default n
+choice PELY_FOMO_NORMALIZATION
+    prompt "Input normalization used during export"
+    default PELY_FOMO_NORMALIZE_ZERO_ONE
+config PELY_FOMO_NORMALIZE_ZERO_ONE
+    bool "pixel / 255 ([0,1])"
+config PELY_FOMO_NORMALIZE_MINUS_ONE
+    bool "pixel / 127.5 - 1 ([-1,1])"
+config PELY_FOMO_NORMALIZE_RAW
+    bool "Raw pixel ([0,255])"
+endchoice
+endmenu
+
+menu "WS2812 matrix"
+config PELY_LED_GPIO
+    int "Data GPIO (-1 until configured)"
+    range -1 48
+    default -1
+config PELY_LED_WIDTH
+    int "Logical width"
+    range 8 64
+    default 16
+config PELY_LED_HEIGHT
+    int "Logical height"
+    range 4 32
+    default 8
+config PELY_LED_TILE_WIDTH
+    int "Tile width (0 for a single panel)"
+    range 0 64
+    default 0
+config PELY_LED_TILE_HEIGHT
+    int "Tile height (0 for a single panel)"
+    range 0 32
+    default 0
+config PELY_LED_COLUMNS
+    bool "Pixels inside a tile run by columns"
+    default n
+config PELY_LED_SERPENTINE
+    bool "Serpentine pixels inside each tile"
+    default y
+config PELY_LED_SERPENTINE_TILES
+    bool "Serpentine order of tiles"
+    default n
+config PELY_LED_MIRROR_X
+    bool "Mirror logical matrix horizontally"
+    default n
+config PELY_LED_MIRROR_Y
+    bool "Mirror logical matrix vertically"
+    default n
+config PELY_LED_BRIGHTNESS
+    int "Brightness (0..255)"
+    range 0 255
+    default 24
+endmenu
+
+menu "Touch sensor"
+choice PELY_TOUCH_BACKEND
+    prompt "Sensor backend"
+    default PELY_TOUCH_TTP223
+config PELY_TOUCH_TTP223
+    bool "TTP223 digital OUT (GPIO interrupt)"
+config PELY_TOUCH_INTERNAL
+    bool "Internal capacitive pad (touch interrupt)"
+endchoice
+config PELY_TOUCH_GPIO
+    int "TTP223 OUT GPIO (-1 until configured)"
+    depends on PELY_TOUCH_TTP223
+    range -1 48
+    default -1
+config PELY_TOUCH_CHANNEL
+    int "Internal touch channel (0 until configured, then 1..14)"
+    range 0 14
+    default 0
+config PELY_TOUCH_ACTIVE_HIGH
+    bool "TTP223 OUT is active high"
+    default y
+endmenu
+
+menu "Optional Wi-Fi station"
+config PELY_WIFI_ENABLED
+    bool "Connect Wi-Fi (offline-first storage always remains enabled)"
+    default n
+config PELY_WIFI_SSID
+    string "SSID"
+    default ""
+config PELY_WIFI_PASSWORD
+    string "Password (empty for an open AP)"
+    default ""
+config PELY_WIFI_MAX_RETRIES
+    int "Reconnect attempts before remaining offline"
+    range 0 100
+    default 5
+endmenu
+
+endmenu

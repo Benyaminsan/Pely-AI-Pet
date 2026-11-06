@@ -1,0 +1,7 @@
+description: "INT8 FOMO heatmap inference with ESP-DL for the robotic pet"
+targets:
+  - esp32s3
+dependencies:
+  idf: ">=5.3,<6.0"
+  espressif/esp-dl:
+    version: "3.3.14"

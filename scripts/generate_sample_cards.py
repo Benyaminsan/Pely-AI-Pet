@@ -76,6 +76,61 @@ CARD_THEMES = {
         "tag": "MILK",
         "icon_shapes": "drops",
     },
+    "pizza": {
+        "bg_top": (255, 248, 225),       # Warm cream
+        "bg_bottom": (255, 204, 102),    # Golden amber
+        "primary": (217, 119, 6),        # Amber
+        "border": (180, 83, 9),          # Dark amber
+        "accent": (251, 191, 36),        # Bright golden
+        "text": (120, 53, 15),           # Dark rust brown
+        "emoji": "🍕",
+        "tag": "PIZZA",
+        "icon_shapes": "triangles",
+    },
+    "orange_juice": {
+        "bg_top": (255, 237, 213),       # Peach cream
+        "bg_bottom": (253, 186, 116),    # Light orange
+        "primary": (234, 88, 12),        # Deep orange
+        "border": (194, 65, 12),         # Burnt orange
+        "accent": (251, 146, 60),        # Bright orange
+        "text": (124, 45, 18),           # Dark rust
+        "emoji": "🍊",
+        "tag": "ORANGE JUICE",
+        "icon_shapes": "circles",
+    },
+    "banana": {
+        "bg_top": (254, 252, 232),       # Pale yellow
+        "bg_bottom": (250, 240, 100),    # Banana yellow
+        "primary": (202, 138, 4),        # Goldenrod
+        "border": (161, 98, 7),          # Dark gold
+        "accent": (250, 204, 21),        # Vivid yellow
+        "text": (113, 63, 18),           # Brown
+        "emoji": "🍌",
+        "tag": "BANANA",
+        "icon_shapes": "waves",
+    },
+    "sushi": {
+        "bg_top": (253, 242, 248),       # Soft pink blush
+        "bg_bottom": (251, 207, 232),    # Rose pink
+        "primary": (219, 39, 119),       # Hot pink
+        "border": (190, 24, 93),         # Dark pink
+        "accent": (249, 168, 212),       # Light pink
+        "text": (131, 24, 67),           # Dark rose
+        "emoji": "🍣",
+        "tag": "SUSHI",
+        "icon_shapes": "leaves",
+    },
+    "chocolate_cake": {
+        "bg_top": (255, 237, 213),       # Warm peach cream
+        "bg_bottom": (210, 150, 100),    # Caramel brown
+        "primary": (120, 53, 15),        # Dark chocolate
+        "border": (92, 38, 10),          # Very dark brown
+        "accent": (180, 103, 50),        # Medium chocolate
+        "text": (69, 26, 3),             # Espresso
+        "emoji": "🍰",
+        "tag": "CHOCOLATE CAKE",
+        "icon_shapes": "circles",
+    },
 }
 
 

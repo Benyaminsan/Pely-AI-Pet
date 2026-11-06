@@ -2,6 +2,11 @@
 
 A software prototype for an interactive robotic pet smart toy. Validates the **Computer Vision + Food Card Recognition + Pet Behavior + 60 FPS Animated Eye System + English TTS Voice Response** pipeline using a standard laptop webcam.
 
+The ESP32-S3-N16R8 firmware entry point is now available in [main/main.cpp](main/main.cpp).
+See the [ESP-IDF setup and task architecture](main/README.md) for GPIO/model configuration,
+FreeRTOS task placement, offline storage, and firmware build instructions. The sections below
+describe the original laptop Python prototype.
+
 ---
 
 ## 🌟 Key Features

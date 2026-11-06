@@ -1,0 +1,5 @@
+description: "Pely ESP32-S3 FreeRTOS application entry point"
+targets:
+  - esp32s3
+dependencies:
+  idf: ">=5.3,<6.0"

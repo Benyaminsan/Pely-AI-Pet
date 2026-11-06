@@ -1,0 +1,8 @@
+description: "WS2812 eye expressions with ESP-IDF RMT, DMA, easing, and blinking"
+targets:
+  - esp32s3
+dependencies:
+  idf: ">=5.3,<6.0"
+  espressif/led_strip:
+    version: "3.0.3"
+    public: true

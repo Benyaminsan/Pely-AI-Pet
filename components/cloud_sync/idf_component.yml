@@ -1,0 +1,5 @@
+description: "Offline-first NVS pet progress with a Wi-Fi-triggered Firebase JSON placeholder"
+targets:
+  - esp32s3
+dependencies:
+  idf: ">=5.3,<6.0"

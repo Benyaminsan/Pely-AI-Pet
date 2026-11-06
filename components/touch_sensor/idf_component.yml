@@ -1,0 +1,5 @@
+description: "Interrupt-driven TTP223 GPIO or internal ESP32-S3 capacitive touch input"
+targets:
+  - esp32s3
+dependencies:
+  idf: ">=5.3,<6.0"
