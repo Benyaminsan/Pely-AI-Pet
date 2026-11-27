@@ -8,16 +8,21 @@
     "C:\\Users\\LENOVO\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages",
     "${workspaceFolder}"
   ],
-  "idf.currentSetup": "C:\\esp\\v6.1\\esp-idf",
+  "idf.currentSetup": "C:\\esp\\v5.3.3\\esp-idf",
   "idf.openOcdConfigs": [
     "board/esp32s3-bridge.cfg"
   ],
-  "idf.customExtraVars": {},
+  "idf.customExtraVars": {
+    "IDF_PATH": "C:\\esp\\v5.3.3\\esp-idf",
+    "IDF_TOOLS_PATH": "C:\\Espressif",
+    "IDF_PYTHON_ENV_PATH": "C:\\Espressif\\python_env\\idf5.3_py3.13_env",
+    "IDF_TARGET": "esp32s3"
+  },
   "clangd.path": "C:\\Espressif\\tools\\esp-clangd\\esp-21.1.3_20260408\\esp-clangd\\bin\\clangd.exe",
   "clangd.arguments": [
     "--background-index",
     "--query-driver=**",
     "--compile-commands-dir=d:\\Semester 7\\Pely-AI-Pet\\build"
   ],
-  "C_Cpp.default.compilerPath": "d:\\Semester 7\\Pely-AI-Pet\\components\\pet_logic\\include\\pet_logic.hpp"
+  "C_Cpp.default.compilerPath": "C:\\Espressif\\tools\\xtensa-esp-elf\\esp-13.2.0_20240530\\xtensa-esp-elf\\bin\\xtensa-esp32s3-elf-g++.exe"
 }
